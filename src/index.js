@@ -1,27 +1,24 @@
-import _ from 'lodash';
 import './style.css';
 
 const tasksSection = document.querySelector('.task-section');
-
 
 const tasks = [
   {
     description: 'Clean Room',
     completed: false,
-    index: 1
+    index: 1,
   },
   {
     description: 'Go Shopping',
     completed: false,
-    index: 2
+    index: 2,
   },
   {
     description: 'Walk Dog',
     completed: false,
-    index: 3
+    index: 3,
   },
-]
-console.log(tasks);
+];
 
 const itterate = () => {
   tasks.forEach((task) => {
@@ -38,22 +35,9 @@ const itterate = () => {
     editIcon.classList.add('fa-pen-to-square');
     newTask.append(rmvIcon, taskText, editIcon);
     tasksSection.appendChild(newTask);
-  })
-}
+  });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   itterate();
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
