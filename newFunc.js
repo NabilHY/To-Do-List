@@ -62,4 +62,6 @@ const addTask = (e) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export { loadLS, addTask };
+
+
+export { loadLS, addTask, tasksSection };
