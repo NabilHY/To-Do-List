@@ -27,13 +27,14 @@ const itterate = () => {
     const rmvIcon = document.createElement('i');
     rmvIcon.classList.add('fa-regular');
     rmvIcon.classList.add('fa-square-full');
-
+    const div = document.createElement('div');
     const taskText = document.createElement('p');
     taskText.innerHTML = `${task.description}`;
-    const editIcon = document.createElement('i');
-    editIcon.classList.add('fa-regular');
-    editIcon.classList.add('fa-pen-to-square');
-    newTask.append(rmvIcon, taskText, editIcon);
+    const square = document.createElement('i');
+    square.classList.add('fa-regular');
+    square.classList.add('fa-pen-to-square');
+    div.append(square, taskText);
+    newTask.append(div, square);
     tasksSection.appendChild(newTask);
   });
 };
