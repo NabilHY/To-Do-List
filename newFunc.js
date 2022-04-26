@@ -22,10 +22,10 @@ const loadLS = () => {
       <input type="checkbox" class="status">
       <input type='text' readonly='readonly' value='${task.description}'>
       <div class="buttons">
-          <button class="edit-btn" >
+          <button>
               <i class="edit-btn fa-regular fa-pen-to-square" data-id="${task.id}"></i>
           </button>
-          <button class="remove-btn" >
+          <button>
               <i class="remove-btn fa-solid fa-delete-left" data-id="${task.id}"></i>
           </button>
       </div>
@@ -48,10 +48,10 @@ const addTask = (e) => {
             <input type="checkbox" class="status">
               <input type='text' readonly='readonly' value='${newTask.description}'>
                 <div class="buttons">
-                  <button class="edit-btn" >
+                  <button>
                     <i class="edit-btn fa-regular fa-pen-to-square" data-id="${newTask.id}"></i>
                   </button>
-                  <button class="remove-btn" >
+                  <button>
                     <i class="remove-btn fa-solid fa-delete-left" data-id="${newTask.id}"></i>
                   </button>
                 </div>
@@ -61,7 +61,5 @@ const addTask = (e) => {
   }
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
-
-
 
 export { loadLS, addTask, tasksSection };
