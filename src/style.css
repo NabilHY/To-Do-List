@@ -1,5 +1,23 @@
+html,
 body {
   background-color: #d0d0d0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 0;
+  border: 0;
+}
+
+#add-btn {
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(110, 109, 109);
+  color: white;
+  cursor: pointer;
 }
 
 .centered {
@@ -14,6 +32,7 @@ body {
   width: 50%;
   border-radius: 10px;
   border-style: ridge;
+  border: 0;
 }
 
 .row {
@@ -22,25 +41,124 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .row input {
   border-style: none;
   outline: none;
+  width: 100%;
 }
 
 .task-row {
-  font-family: 'Poppins', sans-serif;
-  font-size: small;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+}
+
+.task-row-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
 }
 
 .clear {
   font-family: 'Poppins', sans-serif;
-  text-align: center;
-  font-size: small;
+  align-items: center;
+  font-size: medium;
   color: grey;
+  background-color: white;
+  padding: 5%;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(5, 3, 87);
+  color: white;
+  cursor: pointer;
+}
+
+.remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] :checked::after {
+  background-color: black;
+  color: azure;
+}
+
+input[type="checkbox"]:checked::after {
+  width: 40px;
+  height: 40px;
+  background-color: green;
+  color: green;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none !important;
+  border: none;
+}
+
+input[type="text"] {
+  font-family: 'Poppins', sans-serif;
+  font-size: medium;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+}
+
+.check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(27, 212, 42);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.reset-btn {
+  cursor: pointer;
 }
