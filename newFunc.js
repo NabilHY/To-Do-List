@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 const tasksSection = document.querySelector('.task-section');
 const taskDesc = document.getElementById('task-value');
 

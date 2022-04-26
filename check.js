@@ -36,5 +36,5 @@ const restoreVal = (index) => {
 };
 
 export {
-    check, unchecked, editVal, restoreVal,
-  };
+  check, unchecked, editVal, restoreVal,
+};

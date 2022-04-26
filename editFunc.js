@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable eqeqeq */
 const editFunc = (e) => {
   const element = (e.target.parentElement.parentElement.parentElement.children[1]);
