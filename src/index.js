@@ -1,44 +1,37 @@
 import './style.css';
+import { loadLS, addTask, tasksSection } from '../modules/newFunc.js';
+import { removeFunc, updateList } from '../modules/removeFunc.js';
+import editFunc from '../modules/editFunc.js';
+import {
+  check, unchecked, editVal, restoreVal,
+} from '../modules/check.js';
 
-const tasksSection = document.querySelector('.task-section');
+const addBtn = document.getElementById('add-btn');
 
-const tasks = [
-  {
-    description: 'Clean Room',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Go Shopping',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Walk Dog',
-    completed: false,
-    index: 3,
-  },
-];
-
-const itterate = () => {
-  tasks.forEach((task) => {
-    const newTask = document.createElement('div');
-    newTask.classList.add('task-row');
-    const rmvIcon = document.createElement('i');
-    rmvIcon.classList.add('fa-regular');
-    rmvIcon.classList.add('fa-square-full');
-    const div = document.createElement('div');
-    const taskText = document.createElement('p');
-    taskText.innerHTML = `${task.description}`;
-    const square = document.createElement('i');
-    square.classList.add('fa-regular');
-    square.classList.add('fa-pen-to-square');
-    div.append(square, taskText);
-    newTask.append(div, square);
-    tasksSection.appendChild(newTask);
-  });
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  itterate();
+tasksSection.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-btn')) {
+    removeFunc(e.target);
+    updateList(e.target.getAttribute('data-id'));
+  }
 });
+
+tasksSection.addEventListener('click', (e) => {
+  if (e.target.classList.contains('edit-btn')) {
+    editFunc(e);
+  }
+});
+
+tasksSection.addEventListener('change', (e) => {
+  if ((e.target.tagName === 'INPUT') && (e.target.type === 'checkbox')) {
+    if (e.target.checked === false) {
+      unchecked(e.target);
+      restoreVal(e.target.getAttribute('data-id'));
+    } else {
+      check(e.target);
+      editVal(e.target.getAttribute('data-id'));
+    }
+  }
+});
+
+addBtn.addEventListener('click', addTask);
+document.addEventListener('DOMContentLoaded', loadLS);
