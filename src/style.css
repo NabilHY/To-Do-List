@@ -53,15 +53,7 @@ button {
 .task-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.task-row-up {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
 }
@@ -161,4 +153,16 @@ input[type="text"] {
 
 .reset-btn {
   cursor: pointer;
+}
+
+.alert-message {
+  position: absolute;
+  left: 39%;
+  align-items: center; 
+  font-family: 'Poppins', sans-serif;
+  background-color: red;
+  border-radius: 20px;
+  padding: 0 1%;
+  margin: 1%;
+  /* top: 50%; */
 }

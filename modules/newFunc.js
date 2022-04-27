@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 const tasksSection = document.querySelector('.task-section');
 const taskDesc = document.getElementById('task-value');
 
@@ -40,7 +39,20 @@ const loadLS = () => {
 const addTask = (e) => {
   e.preventDefault();
   if (taskDesc.value === '') {
-    alert('Please Add your task');
+    // const message = `    
+    // <div class="alert-message">
+    // <p>Please Add a task to the list</p>
+    // </div>`;
+    const message = document.createElement('div');
+    message.classList.add('alert-message');
+    const p = document.createElement('p');
+    p.innerText = 'Please Add a task to the list';
+    message.appendChild(p);
+    document.body.appendChild(message);
+    setTimeout(() => {
+      const element = document.querySelector('.alert-message');
+      element.classList.add('none');
+    }, 3000);
   } else {
     const newTask = new Task(taskDesc.value);
     tasks.push(newTask);

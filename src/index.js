@@ -1,12 +1,10 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable no-plusplus */
 import './style.css';
-import { loadLS, addTask, tasksSection } from '../newFunc.js';
-import { removeFunc, updateList } from '../removeFunc.js';
-import { editFunc } from '../editFunc.js';
+import { loadLS, addTask, tasksSection } from '../modules/newFunc.js';
+import { removeFunc, updateList } from '../modules/removeFunc.js';
+import editFunc from '../modules/editFunc.js';
 import {
   check, unchecked, editVal, restoreVal,
-} from '../check.js';
+} from '../modules/check.js';
 
 const addBtn = document.getElementById('add-btn');
 

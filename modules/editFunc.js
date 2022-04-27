@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable eqeqeq */
 const editFunc = (e) => {
   const element = (e.target.parentElement.parentElement.parentElement.children[1]);
   element.setAttribute('value', '');
@@ -10,10 +8,10 @@ const editFunc = (e) => {
     if (ev.key === 'Enter') {
       element.setAttribute('readonly', 'readonly');
       e.target.setAttribute('class', 'edit-btn fa-regular fa-pen-to-square');
-      const index = e.target.getAttribute('data-id');
+      const index = parseInt(e.target.getAttribute('data-id'), 10);
       const arr = JSON.parse(localStorage.getItem('tasks'));
       arr.forEach((task) => {
-        if (task.id == index) {
+        if (task.id === index) {
           task.description = element.value;
         }
       });
@@ -22,4 +20,4 @@ const editFunc = (e) => {
   });
 };
 
-export { editFunc };
+export default editFunc;
