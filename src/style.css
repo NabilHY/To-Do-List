@@ -60,7 +60,7 @@ button {
 
 .clear {
   font-family: 'Poppins', sans-serif;
-  align-items: center;
+  text-align: center;
   font-size: medium;
   color: grey;
   background-color: white;

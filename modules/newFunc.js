@@ -19,7 +19,7 @@ const loadLS = () => {
     loadedTasks.forEach((task) => {
       tasksSection.innerHTML += `
         <div class="task-row">
-      <input type="checkbox" class="status">
+      <input data-id="${task.id}" type="checkbox" class="status">
       <input type='text' readonly='readonly' value='${task.description}'>
       <div class="buttons">
           <button>
@@ -54,7 +54,7 @@ const addTask = (e) => {
     tasks.push(newTask);
     tasksSection.innerHTML += `
           <div class="task-row" >
-            <input type="checkbox" class="status">
+            <input data-id="${newTask.id}" type="checkbox" class="status">
               <input type='text' readonly='readonly' value='${newTask.description}'>
                 <div class="buttons">
                   <button>
