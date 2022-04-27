@@ -26,10 +26,9 @@ const editVal = (index) => {
 
 const restoreVal = (index) => {
   const arr = JSON.parse(localStorage.getItem('tasks'));
-  const parIndex = parseInt(index, 10);
   arr.forEach((task) => {
     // eslint-disable-next-line eqeqeq
-    if (task.id === parIndex) {
+    if (task.id == index) {
       task.completed = false;
     }
   });

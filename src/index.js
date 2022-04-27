@@ -5,8 +5,11 @@ import editFunc from '../modules/editFunc.js';
 import {
   check, unchecked, editVal, restoreVal,
 } from '../modules/check.js';
+import clear from '../modules/clear.js';
 
 const addBtn = document.getElementById('add-btn');
+const clearBtn = document.querySelector('.clear');
+const reset = document.querySelector('.reset');
 
 tasksSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
@@ -24,6 +27,7 @@ tasksSection.addEventListener('click', (e) => {
 tasksSection.addEventListener('change', (e) => {
   if ((e.target.tagName === 'INPUT') && (e.target.type === 'checkbox')) {
     if (e.target.checked === false) {
+      console.log(e.target);
       unchecked(e.target);
       restoreVal(e.target.getAttribute('data-id'));
     } else {
@@ -33,5 +37,10 @@ tasksSection.addEventListener('change', (e) => {
   }
 });
 
+reset.addEventListener('click', () => {
+  window.localStorage.clear();
+  tasksSection.innerHTML = '';
+});
+clearBtn.addEventListener('click', clear);
 addBtn.addEventListener('click', addTask);
 document.addEventListener('DOMContentLoaded', loadLS);

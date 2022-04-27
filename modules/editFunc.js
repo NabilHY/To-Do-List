@@ -1,5 +1,15 @@
 const editFunc = (e) => {
   const element = (e.target.parentElement.parentElement.parentElement.children[1]);
+  const message = document.createElement('div');
+  message.classList.add('edit-message');
+  const p = document.createElement('p');
+  p.innerText = 'Press Enter after editing your Task';
+  message.appendChild(p);
+  document.body.appendChild(message);
+  setTimeout(() => {
+    const element = document.querySelector('.edit-message');
+    element.classList.add('none');
+  }, 3000);
   element.setAttribute('value', '');
   element.removeAttribute('readonly');
   element.focus();
