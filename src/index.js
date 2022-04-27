@@ -9,6 +9,7 @@ import clear from '../modules/clear.js';
 
 const addBtn = document.getElementById('add-btn');
 const clearBtn = document.querySelector('.clear');
+const reset = document.querySelector('.reset');
 
 tasksSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
@@ -36,6 +37,10 @@ tasksSection.addEventListener('change', (e) => {
   }
 });
 
+reset.addEventListener('click', () => {
+  window.localStorage.clear();
+  tasksSection.innerHTML = '';
+});
 clearBtn.addEventListener('click', clear);
 addBtn.addEventListener('click', addTask);
 document.addEventListener('DOMContentLoaded', loadLS);
