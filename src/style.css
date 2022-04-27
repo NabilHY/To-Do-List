@@ -158,11 +158,10 @@ input[type="text"] {
 .alert-message {
   position: absolute;
   left: 39%;
-  align-items: center; 
+  align-items: center;
   font-family: 'Poppins', sans-serif;
   background-color: red;
   border-radius: 20px;
   padding: 0 1%;
   margin: 1%;
-  /* top: 50%; */
 }

@@ -39,10 +39,6 @@ const loadLS = () => {
 const addTask = (e) => {
   e.preventDefault();
   if (taskDesc.value === '') {
-    // const message = `    
-    // <div class="alert-message">
-    // <p>Please Add a task to the list</p>
-    // </div>`;
     const message = document.createElement('div');
     message.classList.add('alert-message');
     const p = document.createElement('p');
