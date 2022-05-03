@@ -29,12 +29,12 @@
 ### Clone the repository
 
 ```
-git@github.com:NabilHY/To-Do-List.git
+git@github.com:NabilHY/TodoList.git
 ```
 
-### Live Demo
+### Deployment
 
-https://nabilhy.github.io/To-Do-List/
+- The project is deployed with Github pages.
 
 
 

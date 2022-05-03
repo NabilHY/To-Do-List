@@ -27,7 +27,6 @@ tasksSection.addEventListener('click', (e) => {
 tasksSection.addEventListener('change', (e) => {
   if ((e.target.tagName === 'INPUT') && (e.target.type === 'checkbox')) {
     if (e.target.checked === false) {
-      console.log(e.target);
       unchecked(e.target);
       restoreVal(e.target.getAttribute('data-id'));
     } else {
