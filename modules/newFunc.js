@@ -49,7 +49,7 @@ const addTask = (e) => {
       const element = document.querySelector('.alert-message');
       element.classList.add('none');
     }, 3000);
-  } else {
+  } else if(taskDesc.value !== '') {
     const newTask = new Task(taskDesc.value);
     tasks.push(newTask);
     tasksSection.innerHTML += `
