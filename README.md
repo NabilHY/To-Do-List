@@ -49,6 +49,8 @@ git@github.com:NabilHY/TodoList.git
 
 - GitHub: [@NabilHY](https://github.com/NabilHY)
 - Twitter: [@NeoNabil2](https://twitter.com/NeoNabil2)
+- Linkedin: [@Nabil Hayoun](https://www.linkedin.com/in/nabilhayun/)
+
 
 ## 🤝 Contributing
 
