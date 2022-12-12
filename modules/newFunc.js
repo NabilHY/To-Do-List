@@ -17,7 +17,23 @@ const loadLS = () => {
     const loadedTasks = JSON.parse(localStorage.getItem('tasks'));
     tasks = loadedTasks;
     loadedTasks.forEach((task) => {
-      tasksSection.innerHTML += `
+      if (task.completed === true) {
+        tasksSection.innerHTML += `
+      <div class="task-row">
+        <input data-id="2" type="checkbox" class="status">
+        <input type="text" readonly="readonly" value="wdwdwdwwwwwwwwwwwwwww" class="completed">
+        <div class="buttons none">
+            <button>
+                <i class="edit-btn fa-regular fa-pen-to-square" data-id="2"></i>
+            </button>
+            <button>
+                <i class="remove-btn fa-solid fa-delete-left" data-id="2"></i>
+            </button>
+        </div>
+      </div>
+        `;
+      } else {
+        tasksSection.innerHTML += `
         <div class="task-row">
       <input data-id="${task.id}" type="checkbox" class="status">
       <input type='text' readonly='readonly' value='${task.description}'>
@@ -31,6 +47,7 @@ const loadLS = () => {
       </div>
     </div> 
       `;
+      }
     });
   }
 };

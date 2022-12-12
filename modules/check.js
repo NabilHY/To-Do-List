@@ -16,8 +16,7 @@ const unchecked = (boxEle) => {
 const editVal = (index) => {
   const arr = JSON.parse(localStorage.getItem('tasks'));
   arr.forEach((task) => {
-    // eslint-disable-next-line eqeqeq
-    if (task.id == index) {
+    if (task.id === index) {
       task.completed = true;
     }
   });
@@ -27,8 +26,7 @@ const editVal = (index) => {
 const restoreVal = (index) => {
   const arr = JSON.parse(localStorage.getItem('tasks'));
   arr.forEach((task) => {
-    // eslint-disable-next-line eqeqeq
-    if (task.id == index) {
+    if (task.id === index) {
       task.completed = false;
     }
   });

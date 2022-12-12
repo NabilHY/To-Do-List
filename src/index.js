@@ -14,7 +14,7 @@ const reset = document.querySelector('.reset');
 tasksSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
     removeFunc(e.target);
-    updateList(e.target.getAttribute('data-id'));
+    updateList(Number(e.target.getAttribute('data-id')));
   }
 });
 
@@ -28,10 +28,10 @@ tasksSection.addEventListener('change', (e) => {
   if ((e.target.tagName === 'INPUT') && (e.target.type === 'checkbox')) {
     if (e.target.checked === false) {
       unchecked(e.target);
-      restoreVal(e.target.getAttribute('data-id'));
+      restoreVal(Number(e.target.getAttribute('data-id')));
     } else {
       check(e.target);
-      editVal(e.target.getAttribute('data-id'));
+      editVal(Number(e.target.getAttribute('data-id')));
     }
   }
 });
