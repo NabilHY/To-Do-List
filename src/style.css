@@ -165,6 +165,10 @@ input[type="text"] {
   cursor: pointer;
 }
 
+.reset-btn:hover {
+  transform: translateX(10px);
+}
+
 .alert-message {
   position: absolute;
   left: 39%;

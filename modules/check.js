@@ -13,7 +13,7 @@ const unchecked = (boxEle) => {
   task.classList.remove('completed');
 };
 
-const editVal = (index) => {
+const editValue = (index) => {
   const arr = JSON.parse(localStorage.getItem('tasks'));
   arr.forEach((task) => {
     if (task.id === index) {
@@ -23,7 +23,7 @@ const editVal = (index) => {
   localStorage.setItem('tasks', JSON.stringify(arr));
 };
 
-const restoreVal = (index) => {
+const restoreValue = (index) => {
   const arr = JSON.parse(localStorage.getItem('tasks'));
   arr.forEach((task) => {
     if (task.id === index) {
@@ -34,5 +34,5 @@ const restoreVal = (index) => {
 };
 
 export {
-  check, unchecked, editVal, restoreVal,
+  check, unchecked, editValue, restoreValue,
 };

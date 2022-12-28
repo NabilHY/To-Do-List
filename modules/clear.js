@@ -1,11 +1,12 @@
-import { loadLS, tasksSection } from './newFunc.js';
+import { tasksSection } from './task.js';
+import loadLocalStorage from './local-storage.js';
 
-const clear = () => {
+const clearCompletedTasks = () => {
   const arr = JSON.parse(localStorage.getItem('tasks'));
   const filtered = arr.filter((task) => task.completed === false);
   localStorage.setItem('tasks', JSON.stringify(filtered));
   tasksSection.innerHTML = '';
-  loadLS();
+  loadLocalStorage();
 };
 
-export default clear;
+export default clearCompletedTasks;

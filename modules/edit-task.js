@@ -1,4 +1,4 @@
-const editFunc = (e) => {
+const editTask = (e) => {
   const element = (e.target.parentElement.parentElement.parentElement.children[1]);
   const message = document.createElement('div');
   message.classList.add('edit-message');
@@ -30,4 +30,4 @@ const editFunc = (e) => {
   });
 };
 
-export default editFunc;
+export default editTask;

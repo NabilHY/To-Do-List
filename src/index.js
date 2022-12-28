@@ -1,11 +1,12 @@
 import './style.css';
-import { loadLS, addTask, tasksSection } from '../modules/newFunc.js';
-import { removeFunc, updateList } from '../modules/removeFunc.js';
-import editFunc from '../modules/editFunc.js';
+import { addTask, tasksSection, updateTasksArray } from '../modules/task.js';
+import loadLocalStorage from '../modules/local-storage.js';
+import { removeFunction, updateList } from '../modules/remove-task.js';
+import editFunc from '../modules/edit-task.js';
 import {
-  check, unchecked, editVal, restoreVal,
+  check, unchecked, editValue, restoreValue,
 } from '../modules/check.js';
-import clear from '../modules/clear.js';
+import clearCompletedTasks from '../modules/clear.js';
 
 const addBtn = document.getElementById('add-btn');
 const clearBtn = document.querySelector('.clear');
@@ -13,8 +14,9 @@ const reset = document.querySelector('.reset');
 
 tasksSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
-    removeFunc(e.target);
+    removeFunction(e.target);
     updateList(Number(e.target.getAttribute('data-id')));
+    updateTasksArray();
   }
 });
 
@@ -28,10 +30,10 @@ tasksSection.addEventListener('change', (e) => {
   if ((e.target.tagName === 'INPUT') && (e.target.type === 'checkbox')) {
     if (e.target.checked === false) {
       unchecked(e.target);
-      restoreVal(Number(e.target.getAttribute('data-id')));
+      restoreValue(Number(e.target.getAttribute('data-id')));
     } else {
       check(e.target);
-      editVal(Number(e.target.getAttribute('data-id')));
+      editValue(Number(e.target.getAttribute('data-id')));
     }
   }
 });
@@ -40,6 +42,9 @@ reset.addEventListener('click', () => {
   window.localStorage.clear();
   tasksSection.innerHTML = '';
 });
-clearBtn.addEventListener('click', clear);
+clearBtn.addEventListener('click', clearCompletedTasks);
 addBtn.addEventListener('click', addTask);
-document.addEventListener('DOMContentLoaded', loadLS);
+document.addEventListener('DOMContentLoaded', () => {
+  loadLocalStorage();
+  updateTasksArray();
+});
