@@ -4,6 +4,8 @@ const check = (boxEle) => {
   const task = (boxEle.nextElementSibling);
   buttons.classList.add('none');
   task.classList.add('completed');
+  boxEle.parentElement.style.justifyContent = 'flex-start';
+  boxEle.parentElement.style.gap = '10px';
 };
 
 const unchecked = (boxEle) => {
@@ -11,6 +13,7 @@ const unchecked = (boxEle) => {
   const task = (boxEle.nextElementSibling);
   buttons.classList.remove('none');
   task.classList.remove('completed');
+  boxEle.parentElement.style.justifyContent = 'space-between';
 };
 
 const editValue = (index) => {

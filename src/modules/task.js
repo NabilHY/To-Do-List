@@ -12,17 +12,15 @@ class Task {
 }
 
 const updateTasksArray = () => {
-  if (tasks.length !== 0) {
-    tasks = [];
-    tasks = JSON.parse(localStorage.getItem('tasks'));
-  } else {
-    tasks = JSON.parse(localStorage.getItem('tasks'));
-  }
+  tasks = JSON.parse(localStorage.getItem('tasks'));
+};
+
+const resetTasksArray = () => {
+  tasks = [];
 };
 
 // 2. a function that add task to array
-const addTask = (e) => {
-  e.preventDefault();
+const addTask = () => {
   if (taskDescription.value === '') {
     const message = document.createElement('div');
     message.classList.add('alert-message');
@@ -38,15 +36,19 @@ const addTask = (e) => {
     const newTask = new Task(taskDescription.value);
     tasks.push(newTask);
     tasksSection.innerHTML += `
-          <div class="task-row" >
+          <div class="task-row gap-2" >
             <input data-id="${newTask.id}" type="checkbox" class="status">
-              <input type='text' readonly='readonly' value='${newTask.description}'>
+              <input class="text-input" type='text' readonly='readonly' value='${newTask.description}'>
                 <div class="buttons">
                   <button>
+                  <span data-tooltip="Edit Task" data-flow="left">
                     <i class="edit-btn fa-regular fa-pen-to-square" data-id="${newTask.id}"></i>
+                  </span>
                   </button>
                   <button>
+                  <span data-tooltip="Delete Task" data-flow="right">
                     <i class="remove-btn fa-solid fa-delete-left" data-id="${newTask.id}"></i>
+                  </span>
                   </button>
                 </div>
               </div>
@@ -66,5 +68,5 @@ const updateList = (taskIndex) => {
 };
 
 export {
-  addTask, tasksSection, removeFunction, updateList, updateTasksArray,
+  addTask, tasksSection, removeFunction, updateList, updateTasksArray, resetTasksArray,
 };

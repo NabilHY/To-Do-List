@@ -1,5 +1,5 @@
 const removeFunction = (el) => {
-  el.parentElement.parentElement.parentElement.remove();
+  el.parentElement.parentElement.parentElement.parentElement.remove();
 };
 
 const updateList = (id) => {
