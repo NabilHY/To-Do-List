@@ -17,6 +17,14 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-family: var(--popping-font);
+  text-align: center;
+  font-size: x-large;
+  color: var(--blue-background);
+  padding: 2% 0;
+}
+
 button {
   padding: 0;
   border: 0;
