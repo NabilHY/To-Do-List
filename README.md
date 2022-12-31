@@ -20,7 +20,7 @@
 
 ## Screenshot
 
-![todoscreenshot](https://user-images.githubusercontent.com/60401401/166808155-42e74b99-9706-427b-a524-25a0e784e1f3.png)
+![todoscreenshot](./todo-screenshot.jpg)
 
 ## Live Demo
 [Deployment](https://nabilhy.github.io/To-Do-List/)

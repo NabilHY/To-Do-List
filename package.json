@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "deploy": "webpack --mode production && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
