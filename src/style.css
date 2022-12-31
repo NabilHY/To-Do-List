@@ -65,6 +65,7 @@ button {
 .row input {
   border-style: none;
   outline: none;
+  border: 0;
 }
 
 .task-row {
@@ -122,7 +123,7 @@ input[type="checkbox"] {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  border: none;
+  border: 0;
   background-color: transparent;
   resize: none;
   outline: none;
@@ -139,11 +140,12 @@ input[type="checkbox"]:checked::after {
   background-color: var(--green);
   color: var(--green);
   cursor: pointer;
+  border: 0;
 }
 
 input:focus {
   outline: none !important;
-  border: none;
+  border: 0 !important;
 }
 
 input[type="text"] {
