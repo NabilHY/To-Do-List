@@ -39,6 +39,10 @@ button {
   cursor: pointer;
 }
 
+#task-value {
+  border: 0;
+}
+
 .centered {
   display: flex;
   justify-content: center;
@@ -75,6 +79,8 @@ button {
   align-items: center;
   padding: 10px 0;
 }
+
+
 
 .w-89 {
   width: 89%;
